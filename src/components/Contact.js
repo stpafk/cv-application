@@ -64,8 +64,8 @@ class Contact extends Component {
                 onClick={() => this.setState({ isEdit: !isEdit })}>
                     { isEdit ? "Submit" : "Edit" }</button>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Contact;

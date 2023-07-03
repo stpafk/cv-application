@@ -60,7 +60,7 @@ class General extends Component {
                         {isEdit ? "Submit" : "Edit"}
                     </button>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 export default General;
