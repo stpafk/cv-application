@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ExperienceView from '../views/ExperienceHandler';
+import uniqid from 'uniqid';
 
 class Experience extends Component {
     constructor() {
@@ -10,6 +12,7 @@ class Experience extends Component {
                 end: "",
                 cargo: "",
                 description: "",
+                id: uniqid(),
                 isEdit: false,
             },
             experiences: []
@@ -37,9 +40,11 @@ class Experience extends Component {
                 {experiences.length === 0 ? (<div className="empty exp">
                     <button className="add-exp">Add Experience</button>
                 </div>) : (<div>
-
+                    <ExperienceView />
                 </div>) }
             </div>
         );
     };
 };
+
+export default Experience;
