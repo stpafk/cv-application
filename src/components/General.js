@@ -1,5 +1,51 @@
 import React, { Component } from 'react';
 
 class General extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            name: '',
+            cargo: '',
+            description: "",
+            isEdit: false,
+        }
+    }
+    render() {
+        const {name, cargo, description, isEdit} = this.state;
+
+        return(
+            <div className="cv header">
+                { isEdit ? (
+                    <div className='edit mode'>
+                        <input className='header-name edit'
+                        placeholder={name ? name : "Name"}
+                        value={name}
+                        onChange={(e) => this.setState({name: e.target.value})}>
+                        </input>
+                        <input className='header-cargo edit'
+                        placeholder={cargo ? cargo : "Cargo"}
+                        value={cargo}
+                        onChange={(e) => this.setState({cargo: e.target.value})}>
+                        </input>
+                        <input className='header-description edit'
+                        placeholder={description ? description : "Description"}
+                        value={description}
+                        onChange={(e) => this.setState({description: e.target.value})}></input>
+                    </div>
+                ) : (
+                    <div className='cv-noedit'>
+                        <p className='header-name'>{name ? name : "John Doe"}</p>
+                        <p className="header-cargo">{cargo ? cargo : "Front-End Developoer"}</p>
+                        <p className='header-description'>{description ? description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}</p>
+                    </div>
+                )}
+                <button className='edit button'
+                    onClick={() => this.setState({ isEdit: !isEdit })}>
+                        {isEdit ? "Submit" : "Edit"}
+                    </button>
+            </div>
+        )
+    }
 }
 export default General;
