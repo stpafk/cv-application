@@ -51,18 +51,29 @@ class Experience extends Component {
 
     onEditMode = (id) => {
         const currState = this.state.experiences;
-        const indexState = this.state.experiences.findIndex((exp) => exp.id === id);
-        const newState = this.state.experiences.find((exp) => exp.id === id);
-        newState.isEditing = true;
+        const index = this.state.experiences.findIndex((exp) => exp.id === id);
+        currState[index].isEditing = !currState[index].isEditing;
 
-        currState[indexState] = newState;
         this.setState({
             ...this.state.experience,
             experiences: currState,
-            isForm: false,
-        })
-        
-    }
+        });
+    };
+
+    onEditChange = (e, id) => {
+
+        const currState = this.state.experiences;
+        const index = this.state.experiences.findIndex((exp) => exp.id === id);
+        const name = e.target.name;
+        const value = e.target.value;
+
+        currState[index][`${name}`] = value;    
+
+        this.setState({
+            ...this.state.experience,
+            experiences: currState,
+        });
+    };
 
     onDelete = (id) => {
         const newState = this.state.experiences.filter((exp) => exp.id !== id);
@@ -99,9 +110,8 @@ class Experience extends Component {
                     <div className="exp display">
                         <ExperienceView experiences={experiences}
                         onDelete={this.onDelete}
-                        handleEvent={this.handleEvent}
                         onEditMode={this.onEditMode}
-                        submitForm={this.submitForm}/>
+                        onEditChange={this.onEditChange}/>
                         <button className="add exp" onClick={() => this.setState({ isForm: true })}>Add</button>
                     </div>
                 )}

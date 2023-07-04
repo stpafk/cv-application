@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const ExperienceView = (props) => {
-    const { experiences, onDelete, handleEvent, submitForm, onEditMode } = props;
+    const { experiences, onDelete, onEditMode, onEditChange } = props;
 
     return (
         <ul>
@@ -11,14 +11,14 @@ const ExperienceView = (props) => {
                     (<>
                         <form>
                             <label htmlFor="start">Started:</label>
-                            <input type="text" name="start" value={experience.start} onChange={handleEvent} required></input>
+                            <input type="text" name="start" value={experience.start} onChange={(event) => onEditChange(event, experience.id)} required></input>
                             <label htmlFor="end">Ended:</label>
-                            <input type="text" name="end" value={experience.end} onChange={handleEvent} required></input>
+                            <input type="text" name="end" value={experience.end} onChange={(event) => onEditChange(event, experience.id)} required></input>
                             <label htmlFor="cargo">Cargo:</label>
-                            <input type="text" name="cargo" value={experience.cargo} onChange={handleEvent} required></input>
+                            <input type="text" name="cargo" value={experience.cargo} onChange={(event) => onEditChange(event, experience.id)} required></input>
                             <label htmlFor="description">Description:</label>
-                            <input type="text" name="description" value={experience.description} onChange={handleEvent} placeholder=""></input>
-                            <button className="form submit" onClick={submitForm}>Submit</button>
+                            <input type="text" name="description" value={experience.description} onChange={(event) => onEditChange(event, experience.id)} placeholder=""></input>
+                            <button className="form submit" onClick={() => onEditMode(experience.id)}>Submit</button>
                         </form>
                     </>) : 
                     (<>
