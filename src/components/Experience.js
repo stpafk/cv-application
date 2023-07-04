@@ -48,28 +48,41 @@ class Experience extends Component {
 
     }
 
+    onDelete = (id) => {
+        const newState = this.state.experiences.filter((exp) => exp.id !== id);
+
+        this.setState({
+            ...this.state.experience,
+            experiences: newState,
+        });
+    };
+
     render() {
         const {experience, experiences, isForm} = this.state;
-        {console.log(isForm)}
+        
         return ( 
             <div className="cv experience">
                 {isForm ? 
-                (<div className="cv-exp form">
-                    <form className="exp form">
-                        <label htmlFor="start">Started:</label>
-                        <input type="text" name="start" value={experience.start} onChange={this.handleEvent} required></input>
-                        <label htmlFor="end">Ended:</label>
-                        <input type="text" name="end" value={experience.end} onChange={this.handleEvent} required></input>
-                        <label htmlFor="cargo">Cargo:</label>
-                        <input type="text" name="cargo" value={experience.cargo} onChange={this.handleEvent} required></input>
-                        <label htmlFor="description">Description:</label>
-                        <input type="text" name="description" value={experience.description} onChange={this.handleEvent} placeholder=""></input>
-                        <button className="form submit" onClick={this.submitForm}>Submit</button>
-                    </form>
-                </div>)
+                (<>
+                    <ExperienceView experiences={experiences}/>
+                    <div className="cv-exp form">
+                        <form className="exp form">
+                            <label htmlFor="start">Started:</label>
+                            <input type="text" name="start" value={experience.start} onChange={this.handleEvent} required></input>
+                            <label htmlFor="end">Ended:</label>
+                            <input type="text" name="end" value={experience.end} onChange={this.handleEvent} required></input>
+                            <label htmlFor="cargo">Cargo:</label>
+                            <input type="text" name="cargo" value={experience.cargo} onChange={this.handleEvent} required></input>
+                            <label htmlFor="description">Description:</label>
+                            <input type="text" name="description" value={experience.description} onChange={this.handleEvent} placeholder=""></input>
+                            <button className="form submit" onClick={this.submitForm}>Submit</button>
+                        </form>
+                </div>
+                </>)
                  : (
                     <div className="exp display">
-                        <ExperienceView experiences={experiences} />
+                        <ExperienceView experiences={experiences}
+                        onDelete={this.onDelete} />
                         <button className="add exp" onClick={() => this.setState({ isForm: true })}>Add</button>
                     </div>
                 )}
