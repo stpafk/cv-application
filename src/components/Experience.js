@@ -13,6 +13,7 @@ class Experience extends Component {
                 cargo: "",
                 description: "",
                 id: uniqid(),
+                isEditing: false,
             },
             experiences: [],
             isForm: false,
@@ -42,10 +43,25 @@ class Experience extends Component {
                 cargo: "",
                 description: "",
                 id: uniqid(),
+                isEditing: false,
             },
             isForm: false,
-        })
+        });
+    };
 
+    onEditMode = (id) => {
+        const currState = this.state.experiences;
+        const indexState = this.state.experiences.findIndex((exp) => exp.id === id);
+        const newState = this.state.experiences.find((exp) => exp.id === id);
+        newState.isEditing = true;
+
+        currState[indexState] = newState;
+        this.setState({
+            ...this.state.experience,
+            experiences: currState,
+            isForm: false,
+        })
+        
     }
 
     onDelete = (id) => {
@@ -82,7 +98,10 @@ class Experience extends Component {
                  : (
                     <div className="exp display">
                         <ExperienceView experiences={experiences}
-                        onDelete={this.onDelete} />
+                        onDelete={this.onDelete}
+                        handleEvent={this.handleEvent}
+                        onEditMode={this.onEditMode}
+                        submitForm={this.submitForm}/>
                         <button className="add exp" onClick={() => this.setState({ isForm: true })}>Add</button>
                     </div>
                 )}
