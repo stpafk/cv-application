@@ -91,7 +91,10 @@ class Experience extends Component {
             <div className="cv experience">
                 {isForm ? 
                 (<>
-                    <ExperienceView experiences={experiences}/>
+                     <ExperienceView experiences={experiences}
+                        onDelete={this.onDelete}
+                        onEditMode={this.onEditMode}
+                        onEditChange={this.onEditChange}/>
                     <div className="cv-exp form">
                         <form className="exp form">
                             <label htmlFor="start">Started:</label>
