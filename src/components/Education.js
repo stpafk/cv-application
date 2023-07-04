@@ -25,8 +25,8 @@ class Education extends Component {
         const value = e.target.value;
 
         this.setState({
-            experience: {
-                ...this.state.experience,
+            education: {
+                ...this.state.education,
                 [name]: value
             }
         });
@@ -90,16 +90,16 @@ class Education extends Component {
             <div className="cv education">
                 {isForm ? 
                 (<>
-                 <ExperienceView experiences={experiences}
+                 <EducationView educations={educations}
                         onDelete={this.onDelete}
                         onEditMode={this.onEditMode}
                         onEditChange={this.onEditChange}/>
                     <form className="edu form">
-                        <label htmlFor="period"></label>
+                        <label htmlFor="period">Period:</label>
                         <input type="text" name="period" value={education.period} onChange={this.handleEvent}></input>
-                        <label htmlFor="course"></label>
+                        <label htmlFor="course">Course</label>
                         <input type="text" name="course" value={education.course} onChange={this.handleEvent}></input>
-                        <label htmlFor=""></label>
+                        <label htmlFor="">University:</label>
                         <input type="text" name="university" value={education.university} onChange={this.handleEvent}></input>
                         <button className="form submit" onClick={this.submitForm}>Submit</button>
                         <button className="cancel edu" onClick={() => this.setState({ isForm: false })}>Cancel</button>
