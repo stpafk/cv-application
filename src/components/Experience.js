@@ -13,9 +13,9 @@ class Experience extends Component {
                 cargo: "",
                 description: "",
                 id: uniqid(),
-                isEdit: false,
             },
-            experiences: []
+            experiences: [],
+            isForm: false,
         };
 
     };
@@ -32,16 +32,47 @@ class Experience extends Component {
         });
     };
 
-    render() {
-        const {experience, experiences} = this.state;
+    submitForm = (e) => {
+        e.preventDefault()
+        this.setState({
+            experiences: this.state.experiences.concat(this.state.experience),
+            experience: {
+                start: "",
+                end: "",
+                cargo: "",
+                description: "",
+                id: uniqid(),
+            },
+            isForm: false,
+        })
 
+    }
+
+    render() {
+        const {experience, experiences, isForm} = this.state;
+        {console.log(isForm)}
         return ( 
             <div className="cv experience">
-                {experiences.length === 0 ? (<div className="empty exp">
-                    <button className="add-exp">Add Experience</button>
-                </div>) : (<div>
-                    <ExperienceView />
-                </div>) }
+                {isForm ? 
+                (<div className="cv-exp form">
+                    <form className="exp form">
+                        <label htmlFor="start">Started:</label>
+                        <input type="text" name="start" value={experience.start} onChange={this.handleEvent} required></input>
+                        <label htmlFor="end">Ended:</label>
+                        <input type="text" name="end" value={experience.end} onChange={this.handleEvent} required></input>
+                        <label htmlFor="cargo">Cargo:</label>
+                        <input type="text" name="cargo" value={experience.cargo} onChange={this.handleEvent} required></input>
+                        <label htmlFor="description">Description:</label>
+                        <input type="text" name="description" value={experience.description} onChange={this.handleEvent} placeholder=""></input>
+                        <button className="form submit" onClick={this.submitForm}>Submit</button>
+                    </form>
+                </div>)
+                 : (
+                    <div className="exp display">
+                        <ExperienceView experiences={experiences} />
+                        <button className="add exp" onClick={() => this.setState({ isForm: true })}>Add</button>
+                    </div>
+                )}
             </div>
         );
     };
