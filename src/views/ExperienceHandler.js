@@ -9,7 +9,7 @@ const ExperienceView = (props) => {
                 return <div key={experience.id} className="exp div">
                     { experience.isEditing ? 
                     (<>
-                        <form>
+                        <form className="exp form">
                             <label htmlFor="start">Started:</label>
                             <input type="text" name="start" value={experience.start} onChange={(event) => onEditChange(event, experience.id)} required></input>
                             <label htmlFor="end">Ended:</label>

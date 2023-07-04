@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import General from './General';
 import Contact from './Contact';
 import Experience from './Experience';
+import Education from './Education'
 
 class Resume extends Component {
 
@@ -9,14 +10,16 @@ class Resume extends Component {
         return (
             <div className="yourResume">
                 <div className="cv-header">
-                    <p>General</p>
+                    <p id="general">General</p>
                     <General />
-                    <p>Contact</p>
+                    <p id="contact">Contact</p>
                     <Contact />
                 </div>
                 <div className="cv-body">
-                    <p>Experience</p>
+                    <p id="experience">Experience</p>
                     <Experience />
+                    <p id="education">Education</p>
+                    <Education />
                 </div>
             </div>
         );
