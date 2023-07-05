@@ -28,6 +28,7 @@ class Contact extends Component {
 
         return (
             <div className="cv contact">
+                <p id="contact">Contact</p>
                 { isEdit ? (<div className="contact edit">
                     <input className="contact edit-ct-link"
                     placeholder={contactLink ? contactLink : "Contact Link"}

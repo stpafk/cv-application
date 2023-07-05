@@ -28,6 +28,7 @@ class General extends Component {
 
         return(
             <div className="cv header">
+                <p id="general">General</p>
                 { isEdit ? (
                     <div className='general edit'>
                         <input className='general-name edit'

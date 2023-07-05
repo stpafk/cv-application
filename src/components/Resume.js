@@ -10,9 +10,7 @@ class Resume extends Component {
         return (
             <div className="yourResume">
                 <div className="cv-header">
-                    <p id="general">General</p>
                     <General />
-                    <p id="contact">Contact</p>
                     <Contact />
                 </div>
                 <div className="cv-body">
