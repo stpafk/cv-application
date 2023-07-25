@@ -20,6 +20,8 @@ body {
 }
 
 .yourResume {
+    width: 80%;
+    height: 90%;
     padding: 2vh 5vw;
     border: 4px solid var(--black);
 }
@@ -34,11 +36,17 @@ body {
     padding-right: 20vw;
 }
 
+.general.edit {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20vw;
+}
+
 #general,
 #contact,
 #experience,
 #education {
-    margin: 0;
+    margin-top: 16px;
     font-size: clamp(2rem, 1rem, 4rem);
 }
 

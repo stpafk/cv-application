@@ -25,7 +25,7 @@ class General extends Component {
 
     render() {
         const {name, cargo, description, isEdit} = this.state;
-
+        
         return(
             <div className="cv header">
                 <p id="general">General</p>
