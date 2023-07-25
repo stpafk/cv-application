@@ -30,24 +30,28 @@ class Contact extends Component {
             <div className="cv contact">
                 <p id="contact">Contact</p>
                 { isEdit ? (<div className="contact edit">
+                    <label htmlFor="contact-link" className="label-link">Name</label>
                     <input className="contact edit-ct-link"
-                    placeholder={contactLink ? contactLink : "Contact Link"}
+                    placeholder={contactLink ? contactLink : "Number"}
                     name="contactLink"
                     value={contactLink}
                     onChange={this.eventHandler}>
                     </input>
+                    <label htmlFor="portfolio" className="label-porfolio">Portfolio</label>
                     <input className="contact edit-portfolio"
                     placeholder={portfolio ? portfolio : "Portfolio"}
                     name="portfolio"
                     value={portfolio}
                     onChange={this.eventHandler}>
                     </input>
+                    <label htmlFor="github" className="label-github">Github</label>
                     <input className="contact edit-github"
                     placeholder={github ? github : "Github"}
                     name="github"
                     value={github}
                     onChange={this.eventHandler}>
                     </input>
+                    <label htmlFor="email" className="label-email">Email</label>
                     <input className="contact edit-email"
                     placeholder={email ? email : "Email"}
                     name="email"

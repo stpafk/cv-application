@@ -31,18 +31,22 @@ class General extends Component {
                 <p id="general">General</p>
                 { isEdit ? (
                     <div className='general edit'>
+                        <label htmlFor="name" className="label-name">Name</label>
                         <input className='general-name edit'
                         placeholder={name ? name : "Name"}
                         value={name}
                         name="name"
-                        onChange={this.eventHandler}>
+                        onChange={this.eventHandler}
+                        required="">
                         </input>
+                        <label htmlFor="cargo" className="label-cargo">Cargo</label>
                         <input className='general-cargo edit'
                         placeholder={cargo ? cargo : "Cargo"}
                         name="cargo"
                         value={cargo}
                         onChange={this.eventHandler}>
                         </input>
+                        <label htmlFor="description" className="label-description">Description</label>
                         <input className='header-description edit'
                         placeholder={description ? description : "Description"}
                         value={description}
