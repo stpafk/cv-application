@@ -101,8 +101,10 @@ class Education extends Component {
                         <input type="text" name="course" value={education.course} onChange={this.handleEvent}></input>
                         <label htmlFor="">University</label>
                         <input type="text" name="university" value={education.university} onChange={this.handleEvent}></input>
-                        <button className="form submit" onClick={this.submitForm}>Submit</button>
-                        <button className="cancel edu" onClick={() => this.setState({ isForm: false })}>Cancel</button>
+                        <div className="form buttons">
+                            <button className="form submit" onClick={this.submitForm}>Submit</button>
+                            <button className="cancel edu" onClick={() => this.setState({ isForm: false })}>Cancel</button>
+                        </div>
                     </form>
                 </>) : 
                 (<>

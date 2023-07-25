@@ -105,8 +105,10 @@ class Experience extends Component {
                             <input type="text" name="cargo" value={experience.cargo} onChange={this.handleEvent} required></input>
                             <label htmlFor="description">Description</label>
                             <input type="text" name="description" value={experience.description} onChange={this.handleEvent} placeholder=""></input>
-                            <button className="form submit" onClick={this.submitForm}>Submit</button>
-                            <button className="cancel exp" onClick={() => this.setState({ isForm: false })}>Cancel</button>
+                            <div className="form buttons">
+                                <button className="form submit" onClick={this.submitForm}>Submit</button>
+                                <button className="cancel exp" onClick={() => this.setState({ isForm: false })}>Cancel</button>
+                            </div>
                         </form>
                 </div>
                 </>)
