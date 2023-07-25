@@ -97,13 +97,13 @@ class Experience extends Component {
                         onEditChange={this.onEditChange}/>
                     <div className="cv-exp form">
                         <form className="exp form">
-                            <label htmlFor="start">Started:</label>
+                            <label htmlFor="start">Started</label>
                             <input type="text" name="start" value={experience.start} onChange={this.handleEvent} required></input>
-                            <label htmlFor="end">Ended:</label>
+                            <label htmlFor="end">Ended</label>
                             <input type="text" name="end" value={experience.end} onChange={this.handleEvent} required></input>
-                            <label htmlFor="cargo">Cargo:</label>
+                            <label htmlFor="cargo">Cargo</label>
                             <input type="text" name="cargo" value={experience.cargo} onChange={this.handleEvent} required></input>
-                            <label htmlFor="description">Description:</label>
+                            <label htmlFor="description">Description</label>
                             <input type="text" name="description" value={experience.description} onChange={this.handleEvent} placeholder=""></input>
                             <button className="form submit" onClick={this.submitForm}>Submit</button>
                             <button className="cancel exp" onClick={() => this.setState({ isForm: false })}>Cancel</button>

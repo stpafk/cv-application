@@ -30,7 +30,7 @@ class Contact extends Component {
             <div className="cv contact">
                 <p id="contact">Contact</p>
                 { isEdit ? (<div className="contact edit">
-                    <label htmlFor="contact-link" className="label-link">Name</label>
+                    <label htmlFor="contact-link" className="label-link">Number</label>
                     <input className="contact edit-ct-link"
                     placeholder={contactLink ? contactLink : "Number"}
                     name="contactLink"

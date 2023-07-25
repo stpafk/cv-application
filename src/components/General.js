@@ -27,7 +27,7 @@ class General extends Component {
         const {name, cargo, description, isEdit} = this.state;
         
         return(
-            <div className="cv header">
+            <div className="cv general">
                 <p id="general">General</p>
                 { isEdit ? (
                     <div className='general edit'>
