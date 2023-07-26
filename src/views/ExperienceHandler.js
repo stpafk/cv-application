@@ -4,9 +4,9 @@ const ExperienceView = (props) => {
     const { experiences, onDelete, onEditMode, onEditChange } = props;
 
     return (
-        <ul>
+        <ul className="experience list">
             {experiences.map((experience) => {
-                return <div key={experience.id} className="exp div">
+                return <li key={experience.id} className="exp div">
                     { experience.isEditing ? 
                     (<>
                         <form className="exp form">
@@ -22,14 +22,20 @@ const ExperienceView = (props) => {
                         </form>
                     </>) : 
                     (<>
-                        <p className="exp start">{experience.start}</p>
-                        <p className="exp end">{experience.end}</p>
-                        <p className="exp cargo">{experience.cargo}</p>
-                        <p className="exp description">{experience.description}</p>
-                        <button className="exp remove" onClick={() => onDelete(experience.id)}>Remove</button>
-                        <button className="exp edit" onClick={() => onEditMode(experience.id) }>Edit</button>
+                        <div className="exp period">
+                            <p className="exp start">{experience.start}</p>
+                            <p className="exp end">{experience.end}</p>
+                        </div>
+                        <div className="exp info">
+                            <p className="exp cargo">{experience.cargo}</p>
+                            <p className="exp description">{experience.description}</p>
+                        </div>
+                        <div className="exp buttons">
+                            <button className="exp remove" onClick={() => onDelete(experience.id)}>Remove</button>
+                            <button className="exp edit" onClick={() => onEditMode(experience.id) }>Edit</button>
+                        </div>
                     </>)}
-                </div>
+                </li>
             })}
         </ul>
     )
