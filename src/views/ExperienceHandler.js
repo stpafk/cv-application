@@ -3,8 +3,16 @@ import React from 'react';
 const ExperienceView = (props) => {
     const { experiences, onDelete, onEditMode, onEditChange } = props;
 
+    const checkLength = () => {
+        if (experiences.length === 1) {
+            return "true"
+        }
+
+        return "false"
+    }
+
     return (
-        <ul className="experience list">
+        <ul className="experience list" id={checkLength()}>
             {experiences.map((experience) => {
                 return <li key={experience.id} className="exp div">
                     { experience.isEditing ? 
