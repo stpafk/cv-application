@@ -58,6 +58,15 @@ input {
     
 }
 
+.contact.noedit > * {
+    text-align: center;
+}
+
+.contact.button-edit {
+    display: block;
+    margin: 0 auto;
+}
+
 .exp.form,
 .edu.form {
     display: flex;
@@ -94,12 +103,19 @@ input {
 }
 
 .exp.start {
+     text-align: center;
+     font-style: italic;
      margin-bottom: 0;
      font-weight: 600;
+     padding-bottom: 16px;
 }
 
 .exp.end {
+    padding-top: 16px;
     margin-top: 0;
+    text-align: center;
+    border-top: 2px solid rgba(177, 167, 167, 0.26);
+    font-style: italic;
     font-weight: 600;
 }
 
@@ -130,14 +146,22 @@ input {
 #experience,
 #education {
     margin-top: 32px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-bottom: 16px;
+    border-bottom: 2px solid rgba(177, 167, 167, 0.26);
     text-align: center;
-    font-size: clamp(8px, 2rem, 4rem);
+    font-size: clamp(1em, 1.5em, 2em);
+}
+
+#contact {
+    text-align: center;
 }
 
 #general,
 #contact {
     margin-top: 16px;
-    font-size: clamp(8px, 2rem, 4rem);
+    font-size: clamp(1em, 1.5em, 2em);
 }
 
 .form.submit, .cancel.exp,
@@ -170,4 +194,15 @@ input {
 
 .exp.edit, .edu.edit {
     margin-left: 16px;
+}
+
+.education.list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.edu.university {
+    font-weight: 800;
 }

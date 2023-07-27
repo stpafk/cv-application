@@ -12,10 +12,10 @@ const EducationView = (props) => {
                         <form className="edu form">
                             <label htmlFor="university">University</label>
                             <input type='text' name="university" value={education.university} onChange={(event) => onEditChange(event, education.id)}></input>
-                            <label htmlFor="period">Period</label>
-                            <input type='text' name="period" value={education.period} onChange={(event) => onEditChange(event, education.id)}></input>
                             <label htmlFor="course">Course</label>
                             <input type='text' name="course" value={education.course} onChange={(event) => onEditChange(event, education.id)}></input>
+                            <label htmlFor="period">Period</label>
+                            <input type='text' name="period" value={education.period} onChange={(event) => onEditChange(event, education.id)}></input>
                             <button className="form submit" onClick={() => onEditMode(education.id)}>Submit</button>
                         </form>
                     </>) : (
