@@ -104,7 +104,7 @@ class Experience extends Component {
                             <label htmlFor="cargo">Cargo</label>
                             <input type="text" name="cargo" value={experience.cargo} onChange={this.handleEvent} placeholder="Exp: Junior Developer"></input>
                             <label htmlFor="description">Description</label>
-                            <input type="text" name="description" value={experience.description} onChange={this.handleEvent} placeholder="Exp: I am a focused student who's always looking for improving my skills and helping my team.'."></input>
+                            <textarea rows="5" cols="80" name="description" value={experience.description} onChange={this.handleEvent} placeholder="Exp: In BlaBla Inc I used to work with web and mobile applications."></textarea>
                             <div className="form buttons">
                                 <button className="form submit" onClick={this.submitForm}>Submit</button>
                                 <button className="cancel exp" onClick={() => this.setState({ isForm: false })}>Cancel</button>

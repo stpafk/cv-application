@@ -40,7 +40,7 @@ input {
     background-color: var(--white);
     width: 80%;
     height: 90%;
-    padding: 2vh 5vw;
+    padding: 5vh 5vw;
     border: 5px solid var(--black);
     border-radius: 4px 4px;
     box-shadow: 8px 8px 8px rgba(110, 105, 105, 0.336)
@@ -49,7 +49,17 @@ input {
 .cv-header {
     padding: 0;
     display: grid;
-    grid-template-columns: 3.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 15%;
+}
+
+.header-description {
+    max-width: 350px;
+    font-style: italic;
+}
+
+.general.view {
+    border-right: 2px solid rgba(177, 167, 167, 0.26)
 }
 
 .general.edit {
@@ -152,6 +162,16 @@ input {
     border-bottom: 2px solid rgba(177, 167, 167, 0.26);
     text-align: center;
     font-size: clamp(1em, 1.5em, 2em);
+}
+
+.exp.form textarea,
+.header-description.edit {
+    resize: none;
+    border: 2px solid black;
+    box-shadow: 4px 4px 4px rgba(177, 167, 167, 0.26);
+    max-width: 400px;
+    max-height: 300px;
+    margin-bottom: 5px;
 }
 
 #contact {
