@@ -95,12 +95,12 @@ class Education extends Component {
                         onEditMode={this.onEditMode}
                         onEditChange={this.onEditChange}/>
                     <form className="edu form">
-                        <label htmlFor="period">Period</label>
-                        <input type="text" name="period" value={education.period} onChange={this.handleEvent} placeholder="Exp: 2020 - Today"></input>
-                        <label htmlFor="course">Course</label>
-                        <input type="text" name="course" value={education.course} onChange={this.handleEvent} placeholder="Exp: Computer Science"></input>
                         <label htmlFor="">University</label>
                         <input type="text" name="university" value={education.university} onChange={this.handleEvent} placeholder="Exp: University of São Paulo"></input>
+                        <label htmlFor="course">Course</label>
+                        <input type="text" name="course" value={education.course} onChange={this.handleEvent} placeholder="Exp: Computer Science"></input>
+                        <label htmlFor="period">Period</label>
+                        <input type="text" name="period" value={education.period} onChange={this.handleEvent} placeholder="Exp: 2020 - Today"></input>
                         <div className="form buttons">
                             <button className="form submit" onClick={this.submitForm}>Submit</button>
                             <button className="cancel edu" onClick={() => this.setState({ isForm: false })}>Cancel</button>
