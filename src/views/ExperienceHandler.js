@@ -25,7 +25,7 @@ const ExperienceView = (props) => {
                             <label htmlFor="cargo">Cargo:</label>
                             <input type="text" name="cargo" value={experience.cargo} onChange={(event) => onEditChange(event, experience.id)} required></input>
                             <label htmlFor="description">Description:</label>
-                            <input type="text" name="description" value={experience.description} onChange={(event) => onEditChange(event, experience.id)} placeholder=""></input>
+                            <textarea name="description" value={experience.description} onChange={(event) => onEditChange(event, experience.id)} placeholder=""></textarea>
                             <button className="form submit" onClick={() => onEditMode(experience.id)}>Submit</button>
                         </form>
                     </>) : 

@@ -83,6 +83,15 @@ input {
     flex-direction: column;
 }
 
+.exp.form > input,
+.exp.form textarea {
+    max-width: 500px;
+}
+
+.exp.form button {
+    margin: 0 auto;
+}
+
 .experience.list[id="true"] {
     list-style-type: none;
     display: flex;
