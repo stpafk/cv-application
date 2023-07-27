@@ -34,7 +34,6 @@ const EducationView = (props) => {
             })}
         </ul>
     )
-
 }
 
 export default EducationView;
