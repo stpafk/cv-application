@@ -84,7 +84,19 @@ class Education extends Component {
 
     render() {
         const { education, educations, isForm } = this.state;
+        const isView = this.props.isView;
 
+        if (isView) {
+            return(
+                <div className="edu display">
+                        <EducationView educations={educations}
+                        onDelete={this.onDelete}
+                        onEditMode={this.onEditMode}
+                        onEditChange={this.onEditChange}
+                        isView={this.props.isView}/>
+                    </div>
+            );
+        };
 
         return(
             <div className="cv education">

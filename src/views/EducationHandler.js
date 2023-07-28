@@ -1,7 +1,25 @@
 import React from 'react';
 
 const EducationView = (props) => {
-    const { educations, onDelete, onEditMode, onEditChange } = props;
+    const { educations, onDelete, onEditMode, onEditChange, isView } = props;
+
+    if (isView) {
+        return(
+            <ul className='education list'>
+                {educations.map((education) => {
+                    return <li className='edu div' key={education.id}>
+                        <>
+                            <div className="education info">
+                                <p className="edu university">{education.university}</p>
+                                <p className="edu course">{education.course}</p>
+                                <p className="edu period">{education.period}</p>
+                            </div>
+                        </>
+                    </li>
+                })}
+            </ul>
+        );
+    };
 
     return (
         <ul className="education list">

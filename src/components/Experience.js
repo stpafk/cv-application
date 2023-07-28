@@ -90,7 +90,7 @@ class Experience extends Component {
 
         if (isView) {
             return(
-                <div className="exp different">
+                <div className="exp display">
                         <ExperienceView experiences={experiences}
                         onDelete={this.onDelete}
                         onEditMode={this.onEditMode}
