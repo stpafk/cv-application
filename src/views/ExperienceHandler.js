@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ExperienceView = (props) => {
-    const { experiences, onDelete, onEditMode, onEditChange } = props;
+    const { experiences, onDelete, onEditMode, onEditChange, isView } = props;
 
     const checkLength = () => {
         if (experiences.length === 1) {
@@ -9,6 +9,28 @@ const ExperienceView = (props) => {
         }
 
         return "false"
+    }
+
+    if (isView) {
+        console.log(isView)
+        return(
+        <ul className="experience list" id={checkLength()}>
+            {experiences.map((experience) => {
+                return <li key={experience.id} className='exp div'>
+                    <>
+                    <div className="exp period">
+                            <p className="exp start">{experience.start}</p>
+                            <p className="exp end">{experience.end}</p>
+                        </div>
+                        <div className="exp info">
+                            <p className="exp cargo">{experience.cargo}</p>
+                            <p className="exp description">{experience.description}</p>
+                        </div>
+                    </>
+                </li>
+            })}
+        </ul>
+        )
     }
 
     return (
