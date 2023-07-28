@@ -25,6 +25,18 @@ class Contact extends Component {
 
     render() {
         const {contactLink, portfolio, github, email, isEdit} = this.state;
+        const isView = this.props.isView;
+
+        if (isView) {
+            return(
+            <div className="contact noedit">
+                    <p className="contact contact-link">{contactLink ? contactLink : "(99) 9999-9999"}</p>
+                    <p className="contact portfolio">{portfolio ? portfolio : "link.tree"}</p>
+                    <p className="contact github">{github ? github : "Github"}</p>
+                    <p className="contact email">{email ? email : "Email"}</p>
+                </div>
+            );
+        };
 
         return (
             <div className="cv contact">

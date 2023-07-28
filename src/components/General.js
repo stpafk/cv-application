@@ -25,10 +25,22 @@ class General extends Component {
 
     render() {
         const {name, cargo, description, isEdit} = this.state;
+        const isView = this.props.isView;
         
+        if (isView) {
+            return(
+                <div className='general view'>
+                        <p className='header-name'>{name ? name : "John Doe"}</p>
+                        <p className="header-cargo">{cargo ? cargo : "Front-End Developer"}</p>
+                        <p className='header-description'>{description ? description : "I am an aspiring student who's always looking to learn and contribute to my team."}</p>
+                    </div>
+            );
+        };
+
         return(
+
             <div className="cv general">
-                <p id="general">General</p>
+                <p id="general">{General}</p>
                 { isEdit ? (
                     <div className='general edit'>
                         <label htmlFor="name" className="label-name">Name</label>

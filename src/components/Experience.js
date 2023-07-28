@@ -86,6 +86,19 @@ class Experience extends Component {
 
     render() {
         const {experience, experiences, isForm} = this.state;
+        const isView = this.props.isView;
+
+        if (isView) {
+            return(
+                <div className="exp different">
+                        <ExperienceView experiences={experiences}
+                        onDelete={this.onDelete}
+                        onEditMode={this.onEditMode}
+                        onEditChange={this.onEditChange}
+                        isView={this.props.isView}/>
+                </div>
+            );
+        };
         
         return ( 
             <div className="cv experience">
