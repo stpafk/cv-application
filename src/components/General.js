@@ -40,7 +40,7 @@ class General extends Component {
         return(
 
             <div className="cv general">
-                <p id="general">{General}</p>
+                <p id="general">General</p>
                 { isEdit ? (
                     <div className='general edit'>
                         <label htmlFor="name" className="label-name">Name</label>
